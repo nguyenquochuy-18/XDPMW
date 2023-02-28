@@ -1,0 +1,71 @@
+{
+  
+    "products": [
+      {
+        "id": 1,
+        "name": "Đồng hồ nam",
+        "category":"Phụ kiện",
+        "price": "459.000",
+        "image":"img/product/product1.png"
+
+      },
+      {
+        "id": 1,
+        "name": "Nước hoa nữ",
+        "category":"Sắc đẹp",
+        "price": "1.100.000",
+        "image":"img/product/product2.png"
+      },
+      {
+        "id": 1,
+        "name": "Đèn ngủ",
+        "category":"Trang trí",
+        "price": "300.000",
+        "image":"img/product/product3.png"
+
+      },
+      {
+        "id": 1,
+        "name": "Đèn ngủ",
+        "category":"Trang trí",
+        "price": "300.000",
+        "image":"img/product/product4.png"
+
+      },
+      {
+        "id": 1,
+        "name": "Đèn ngủ",
+        "category":"Trang trí",
+        "price": "300.000",
+        "image":"img/product/product5.png"
+
+      },
+      {
+        "id": 1,
+        "name": "Đèn ngủ",
+        "category":"Trang trí",
+        "price": "300.000",
+        "image":"img/product/product6.png"
+
+      },
+      {
+        "id": 1,
+        "name": "Đèn ngủ",
+        "category":"Trang trí",
+        "price": "300.000",
+        "image":"img/product/product7.png"
+
+      },
+      {
+        "id": 1,
+        "name": "Đèn ngủ",
+        "category":"Trang trí",
+        "price": "300.000",
+        "image":"img/product/product8.png"
+
+      }
+      
+    ]
+  
+
+}
