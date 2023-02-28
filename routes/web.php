@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', [ProductController::class, 'home'])->name('admin.home');
+Route::get('/', function () {
+    return view('welcome');
+});
+// Route::get('/', [ProductController::class, 'home'])->name('admin.home');
 // Route::get('/admin', function () {
 //     return view('admin');
 // })->middleware(['auth', 'verified'])->name('admin');
