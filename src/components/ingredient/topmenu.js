@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 export default class topmenu extends Component {
   render() {
     return (
-      <div>
-         
+          
         <header className="header_area" >
           <div className="main_menu">
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -44,7 +43,7 @@ export default class topmenu extends Component {
             </nav>
           </div>
         </header>
-      </div>
+  
     )
   }
 }
