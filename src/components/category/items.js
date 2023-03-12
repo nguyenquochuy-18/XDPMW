@@ -9,7 +9,7 @@ export default class items extends Component {
         }
       }
     async componentDidMount() {
-        await fetch("http://aromashopqhuy.x10.mx/admin/api/category")
+        await fetch("https://aromashopqhuy.x10.mx/admin/api/category")
           .then(res => res.json())
           .then((data) => {
             this.setState({ category: data })

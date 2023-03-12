@@ -10,7 +10,7 @@ export default class trendproducts extends Component {
   }
 
   async componentDidMount() {
-    await fetch("http://aromashopqhuy.x10.mx/admin/api/products")
+    await fetch("https://aromashopqhuy.x10.mx/admin/api/products")
       .then(res => res.json())
       .then((data) => {
         this.setState({ product: data })
