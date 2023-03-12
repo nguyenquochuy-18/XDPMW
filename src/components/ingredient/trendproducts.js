@@ -10,7 +10,7 @@ export default class trendproducts extends Component {
   }
 
   async componentDidMount() {
-    await fetch("http://localhost:8000/admin/api/products")
+    await fetch("http://aromashopqhuy.x10.mx/admin/api/products")
       .then(res => res.json())
       .then((data) => {
         this.setState({ product: data })
@@ -26,7 +26,7 @@ export default class trendproducts extends Component {
         <div className="col-md-6 col-lg-4 col-xl-3">
           <div className="card text-center card-product">
             <div className="card-product__img">               
-              <img className="card-img" src="img/product/product2.png" alt="" />
+              <img className="card-img"   src={"http://aromashopqhuy.x10.mx/uploads/"+data.pro_image} alt="" />
               <ul className="card-product__imgOverlay">
                 <li><button><i className="ti-search" /></button></li>
                 <li><button><i className="ti-shopping-cart" /></button></li>
