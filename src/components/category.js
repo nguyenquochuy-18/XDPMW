@@ -16,7 +16,7 @@ export default class category extends Component {
   }
 
   async componentDidMount() {
-    await fetch("http://aromashopqhuy.x10.mx/admin/api/products")
+    await fetch("https://aromashopqhuy.x10.mx/admin/api/products")
       .then((res) => res.json())
       .then((data) => {
         this.setState({ product: data });
@@ -45,7 +45,7 @@ export default class category extends Component {
           <div className="card-product__img">
             <img
               className="card-img"
-              src={"http://aromashopqhuy.x10.mx/uploads/" + data.pro_image}
+              src={"https://aromashopqhuy.x10.mx/uploads/" + data.pro_image}
               alt=""
             />
             <ul className="card-product__imgOverlay">
@@ -158,7 +158,7 @@ function apiClient(endpoint, customConfig = {}) {
   };
 
   return window
-    .fetch("http://aromashopqhuy.x10.mx/admin/api/products/${endpoint}", config)
+    .fetch(`${process.env.REACT_APP_API_URL}/${endpoint}`, config)
     .then(async (response) => {
       const data = await response.json();
       // Chúng ta phải kiểm tra kết quả của response nếu ok thì trả về data
