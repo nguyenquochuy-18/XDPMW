@@ -158,7 +158,7 @@ function apiClient(endpoint, customConfig = {}) {
   };
 
   return window
-    .fetch(`${process.env.REACT_APP_API_URL}/${endpoint}`, config)
+    .fetch("http://aromashopqhuy.x10.mx/admin/api/products/${endpoint}", config)
     .then(async (response) => {
       const data = await response.json();
       // Chúng ta phải kiểm tra kết quả của response nếu ok thì trả về data
