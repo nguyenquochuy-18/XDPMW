@@ -11,13 +11,7 @@ export default class flooter extends Component {
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="single-footer-widget tp_widgets">
                   <h4 className="footer_title large_title">Our Mission</h4>
-                  <p>
-                    So seed seed green that winged cattle in. Gathering thing made fly you're no 
-                    divided deep moved us lan Gathering thing us land years living.
-                  </p>
-                  <p>
-                    So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved 
-                  </p>
+                  
                 </div>
               </div>
               <div className="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
@@ -25,7 +19,7 @@ export default class flooter extends Component {
                   <h4 className="footer_title">Quick Links</h4>
                   <ul className="list">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Category</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Product</a></li>
                     <li><a href="#">Brand</a></li>
@@ -54,22 +48,22 @@ export default class flooter extends Component {
                       <span className="fa fa-location-arrow" />
                       Head Office
                     </p>
-                    <p>123, Main Street, Your City</p>
+                    <p>180 Cao Lỗ, phường 4, Quận 8</p>
                     <p className="sm-head">
                       <span className="fa fa-phone" />
                       Phone Number
                     </p>
                     <p>
-                      +123 456 7890 <br />
-                      +123 456 7890
+                      +84338234017 <br />
+                   
                     </p>
                     <p className="sm-head">
                       <span className="fa fa-envelope" />
                       Email
                     </p>
                     <p>
-                      free@infoexample.com <br />
-                      www.infoexample.com
+                      aromashop@gmail.com <br />
+                
                     </p>
                   </div>
                 </div>
@@ -77,16 +71,7 @@ export default class flooter extends Component {
             </div>
           </div>
         </div>
-        <div className="footer-bottom">
-          <div className="container">
-            <div className="row d-flex">
-              <p className="col-lg-12 footer-text text-center">
-                {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                Copyright © All rights reserved | This template is made with <i className="fa fa-heart" aria-hidden="true" /> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}</p>
-            </div>
-          </div>
-        </div>
+        
       </footer>
       </div>
     )
