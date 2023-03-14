@@ -9,6 +9,7 @@ const Register = lazy(() => import('../components/register'));
 const Category=lazy(()=>import('../components/category'))
 const Blog=lazy(()=>import('../components/blog'))
 const Contact=lazy(()=>import('../components/contact'))
+const Detail=lazy(()=>import('../components/productDetail'))
 
 const Web = () => (
   <Router>
@@ -21,6 +22,7 @@ const Web = () => (
         <Route path='/category' element={<Category/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/product-detail' element={<Detail/>}/>
       </Routes>
     </Suspense>
     <Flooter></Flooter>
