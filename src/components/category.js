@@ -130,7 +130,7 @@ export default class category extends Component {
                           onClick={this.handleClear}
                           className="btn btn-warning"
                         >
-                          Clear!
+                          Clear
                         </button>
                       </div>
                     </div>
