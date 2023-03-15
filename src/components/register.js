@@ -20,7 +20,7 @@ export default class
                             <div className="col-lg-6">
                                 <div className="login_form_inner register_form_inner">
                                     <h3>Create an account</h3>
-                                    <form className="row login_form" action="#/" id="register_form">
+                                    <form className="row login_form" action="http://127.0.0.1:8000/admin/users" id="register_form" method='POST'>
                                         <div className="col-md-12 form-group">
                                             <input type="text" className="form-control" id="name" name="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" />
                                         </div>
