@@ -11,10 +11,14 @@ const Blog=lazy(()=>import('../components/blog'))
 const Contact=lazy(()=>import('../components/contact'))
 const Detail=lazy(()=>import('../components/productDetail'))
 
+function onAuthRequired({ history }) {
+  history.push("/login");
+}
 const Web = () => (
   <Router>
     <Topmenu></Topmenu>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>Loading...</div>}  redirectUri={window.location.origin + "/implicit/callback"}
+      onAuthRequired={onAuthRequired}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -22,7 +26,7 @@ const Web = () => (
         <Route path='/category' element={<Category/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/contact' element={<Contact/>}/>
-        <Route path='/product-detail' element={<Detail/>}/>
+        <Route path='/product-detail/:id' element={<Detail/>}/>
       </Routes>
     </Suspense>
     <Flooter></Flooter>

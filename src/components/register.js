@@ -1,7 +1,38 @@
 import React, { Component } from 'react'
 
-export default class
-    extends Component {
+export default class register extends Component {
+    submitForm= (event)=>{
+        event.preventDefault();
+    }
+    changeInputValue(e) {
+        this.setState({
+          [e.target.name]: e.target.value
+        });
+    }
+    validationForm() {
+        let returnData = {
+          error : false,
+          msg: ''
+        }
+        const {email, password} = this.state
+        //Kiểm tra email
+        const re = /\S+@\S+\.\S+/;
+        if (!re.test(email)) {
+          returnData = {
+            error: true,
+            msg: 'Không đúng định dạng email'
+          }
+        }
+        //Kiểm tra password
+        if(password.length < 8) {
+          returnData = {
+            error: true,
+            msg: 'Mật khẩu phải lớn hơn 8 ký tự'
+          }
+        }
+        return returnData;
+      }
+
     render() {
         return (
             <div>
@@ -40,7 +71,7 @@ export default class
                                             </div>
                                         </div>
                                         <div className="col-md-12 form-group">
-                                            <button type="submit" value="submit" className="button button-register w-100">Register</button>
+                                            <button type="submit" onClick={(event)=>this.submitForm(event)} value="submit" className="button button-register w-100">Register</button>
                                         </div>
                                     </form>
                                 </div>

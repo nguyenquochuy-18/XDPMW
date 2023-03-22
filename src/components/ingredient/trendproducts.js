@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+
 
 export default class trendproducts extends Component {
-  constructor() {
+  constructor(props) {
     super();
 
     this.state = {
@@ -11,7 +12,7 @@ export default class trendproducts extends Component {
   }
 
   async componentDidMount() {
-    await fetch("https://aromashopqhuy.x10.mx/admin/api/products")
+    await fetch("http://aromashopqhuy.x10.mx/admin/api/products")
       .then(res => res.json())
       .then((data) => {
         this.setState({ product: data })
@@ -29,7 +30,7 @@ export default class trendproducts extends Component {
             <div className="card-product__img">               
               <img className="card-img"   src={"http://aromashopqhuy.x10.mx/uploads/"+data.pro_image} alt="" />
               <ul className="card-product__imgOverlay">
-                <li><a href='/product-detail'><button><i className="ti-search" /></button></a></li>
+                <li><Link to={"/product-detail/"+data.pro_name} pro_name={data.pro_name}><button><i className="ti-search" /></button></Link></li>
                 <li><button><i className="ti-shopping-cart" /></button></li>
                 <li><button><i className="ti-heart" /></button></li>
               </ul>
