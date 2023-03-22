@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Items from "./category/items";
 import {map, orderBy as funcOrderBy} from "lodash";
+import { Link } from "react-router-dom";
 
 
 export default class category extends Component {
@@ -61,14 +62,14 @@ export default class category extends Component {
         <div className=" text-center card-product">
           <div className="card-product__img">
             <img
-              className="card-img"
+              className="card-img2"
               src={"https://aromashopqhuy.x10.mx/uploads/" + data.pro_image}
               alt=""
             />
             <ul className="card-product__imgOverlay">
               <li>
                 <button>
-                  <i className="ti-search" />
+                <li><Link to={"/product-detail/"+data.pro_name} pro_name={data.pro_name}><button><i className="ti-search" /></button></Link></li>
                 </button>
               </li>
               <li>
@@ -88,7 +89,7 @@ export default class category extends Component {
             <h4 className="card-product__title">
               <a href="single-product.html">{data.pro_name}</a>
             </h4>
-            <p className="card-product__price">{data.pro_price}</p>
+            <p className="card-product__price">{Intl.NumberFormat("vi").format(data.pro_price) } đ</p>
           </div>
         </div>
       </div>

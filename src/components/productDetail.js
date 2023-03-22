@@ -25,7 +25,7 @@ function Child(props) {
                             <div className="wrapper row">
                                 <div className="preview col-md-6">
                                     <div className=" tab-content">
-                                        <img src={"http://aromashopqhuy.x10.mx/uploads/" + props.pro_image} />
+                                        <img src={"https://aromashopqhuy.x10.mx/uploads/" + props.pro_image} />
                                     </div>
 
                                 </div>
@@ -43,7 +43,7 @@ function Child(props) {
                                     </div>
                                     <p className="product-description">{props.pro_detail}</p>
                           
-                                    <h4 className="price">Giá hiện tại: <span>{props.pro_price}</span></h4>
+                                    <h4 className="price">Giá hiện tại: <span>{Intl.NumberFormat("vi"). format(props.pro_price) } đ</span></h4>
                                     <p className="vote"><strong>100%</strong> hàng <strong>Chất lượng</strong>, đảm bảo
                                         <strong>Uy
                                             tín</strong>!</p>
@@ -98,7 +98,7 @@ class Trendproducts extends Component {
     }
 
     async componentDidMount() {
-        await fetch("http://aromashopqhuy.x10.mx/admin/api/products")
+        await fetch("https://aromashopqhuy.x10.mx/admin/api/products")
             .then(res => res.json())
             .then((data) => {
                 this.setState({ product: data })

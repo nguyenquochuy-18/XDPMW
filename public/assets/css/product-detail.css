@@ -64,7 +64,13 @@ img {
     animation-duration: .3s;
 }
 
+.card-img{
+    height: 330px;
+}
 
+.card-img2{
+    height: 250px;
+}
 .card {
     background: #eee;
     padding: 3em;

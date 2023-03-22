@@ -39,7 +39,7 @@ export default class trendproducts extends Component {
 
               <p>{data.cate_name}</p>
               <h4 className="card-product__title"><a href="single-product.html">{data.pro_name}</a></h4>
-              <p className="card-product__price">{data.pro_price}</p>
+              <p className="card-product__price">{Intl.NumberFormat("vi"). format(data.pro_price) } đ</p>
 
             </div>
           </div>
