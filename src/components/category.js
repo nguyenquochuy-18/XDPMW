@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Items from "./category/items";
-import {map, orderBy as funcOrderBy} from "lodash";
+import { map, orderBy as funcOrderBy } from "lodash";
 import { Link } from "react-router-dom";
-
+// import "./category/pagination"
 
 export default class category extends Component {
   constructor() {
@@ -37,7 +37,7 @@ export default class category extends Component {
     let productsData = [];
     const search = this.state.strSearch;
 
-    let {orderBy,orderDir}=this.state;
+    let { orderBy, orderDir } = this.state;
 
     //Search
     if (search.length > 0) {
@@ -51,14 +51,14 @@ export default class category extends Component {
     }
 
     //Chuyển pro_price về dạng số trước khi Sort vì lúc lấy về từ host pro_price đã bị ép thành kiểu String
-    productsData.map((data,index) =>(
-        data.pro_price=parseFloat(data.pro_price)
+    productsData.map((data, index) => (
+      data.pro_price = parseFloat(data.pro_price)
     ));
     //sort
-    productsData= funcOrderBy(productsData,[orderBy],[orderDir]);
-    
+    productsData = funcOrderBy(productsData, [orderBy], [orderDir]);
+
     let products = productsData.map((data, index) => (
-      <div className="col-md-6 col-lg-4 col-xl-3">
+      <div className="col-md-6 col-lg-4 col-xl-3 item">
         <div className=" text-center card-product">
           <div className="card-product__img">
             <img
@@ -69,7 +69,7 @@ export default class category extends Component {
             <ul className="card-product__imgOverlay">
               <li>
                 <button>
-                <li><Link to={"/product-detail/"+data.pro_name} pro_name={data.pro_name}><button><i className="ti-search" /></button></Link></li>
+                  <li><Link to={"/product-detail/" + data.pro_name} pro_name={data.pro_name}><button><i className="ti-search" /></button></Link></li>
                 </button>
               </li>
               <li>
@@ -89,7 +89,7 @@ export default class category extends Component {
             <h4 className="card-product__title">
               <a href="single-product.html">{data.pro_name}</a>
             </h4>
-            <p className="card-product__price">{Intl.NumberFormat("vi").format(data.pro_price) } đ</p>
+            <p className="card-product__price">{Intl.NumberFormat("vi").format(data.pro_price)} đ</p>
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@ export default class category extends Component {
     return products;
   };
 
-  handleSort(orderBy, orderDir,strSort) {
+  handleSort(orderBy, orderDir, strSort) {
     this.setState({
       orderBy: orderBy,
       orderDir: orderDir,
@@ -116,7 +116,7 @@ export default class category extends Component {
     this.setState({ strSearch: event.target.value });
   }
   render() {
-    let {orderBy,orderDir,strSort} = this.state;
+    let { orderBy, orderDir, strSort } = this.state;
 
     return (
       <div>
@@ -129,17 +129,17 @@ export default class category extends Component {
                 <div className="filter-bar d-flex flex-wrap align-items-center">
                   <div className="sorting">
                     <button value="123" className="btn btn-secondary  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      sort by { strSort }<span className="caret"/>
+                      sort by {strSort}<span className="caret" />
                     </button>
                     <div className="dropdown-menu sort" aria-aria-labelledby="drodownMenu1" >
-                      <a className="dropdown-item" onClick={()=>this.handleSort('pro_name','asc','Name ASC')} role="button">  Name ASC</a>
-                      <a className="dropdown-item" onClick={()=>this.handleSort('pro_name','desc','Name DESC')} role="button">  Name DESC</a>
-                      <a className="dropdown-item" onClick={()=>this.handleSort('pro_price','asc','Price ASC')} role="button">  Price ASC</a>
-                      <a className="dropdown-item" onClick={()=>this.handleSort('pro_price','desc','Price DESC')} role="button">  Price DESC</a>
+                      <a className="dropdown-item" onClick={() => this.handleSort('pro_name', 'asc', 'Name ASC')} role="button">  Name ASC</a>
+                      <a className="dropdown-item" onClick={() => this.handleSort('pro_name', 'desc', 'Name DESC')} role="button">  Name DESC</a>
+                      <a className="dropdown-item" onClick={() => this.handleSort('pro_price', 'asc', 'Price ASC')} role="button">  Price ASC</a>
+                      <a className="dropdown-item" onClick={() => this.handleSort('pro_price', 'desc', 'Price DESC')} role="button">  Price DESC</a>
 
                     </div>
                   </div>
-                  
+
                   <div>
                     <div className="input-group filter-bar-search">
                       <input
@@ -166,7 +166,10 @@ export default class category extends Component {
                 {/* End Filter Bar */}
                 {/* Start Best Seller */}
                 <section className="lattest-product-area pb-40 category-list">
-                  <div className="row">{this.renderProducts()}</div>
+                  <div className="row list">{this.renderProducts()}</div>
+                  <div className="listPage">
+
+                  </div>
                 </section>
                 {/* End Best Seller */}
               </div>

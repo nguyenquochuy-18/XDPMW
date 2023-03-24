@@ -12,14 +12,14 @@ export default class login extends Component {
                 <div className="hover">
                   <h4>New to our website?</h4>
                   <p>There are advances being made in science and technology everyday, and a good example of this is the</p>
-                  <a className="button button-account" href="register.html">Create an Account</a>
+                  <a className="button button-account" href="/register">Create an Account</a>
                 </div>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="login_form_inner">
                 <h3>Log in to enter</h3>
-                <form className="row login_form" action="#/" id="contactForm">
+                <form className="row login_form" action="#" id="contactForm">
                   <div className="col-md-12 form-group">
                     <input type="text" className="form-control" id="name" name="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" />
                   </div>
